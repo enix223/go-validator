@@ -9,7 +9,7 @@ val := Validator{
         // Blank validator for `username` field
         validators.NewBlankValidator(
             "blank", // validator identifier
-            gotext.Get("username should not be blank"), // error message
+            "username should not be blank", // error message
             username, // value to validate
             "",       // blank value
         ),
@@ -22,7 +22,7 @@ val := Validator{
         // Regex validator
         validators.NewRegExpValidator(
             "min_length", // validator identifier
-            gotext.Get("password length should be greater or equal than 6"), // error message
+            "password length should be greater or equal to 6", // error message
             password,                      // value to validate
             regexp.MustCompile("^.{6,}$"), // validate pattern
         ),
