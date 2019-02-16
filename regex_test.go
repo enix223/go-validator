@@ -59,3 +59,11 @@ func TestRegexGetValue(t *testing.T) {
 		t.Fatalf(assertTemplate, "1", validator.Value)
 	}
 }
+
+func TestNewRegexValidator(t *testing.T) {
+	v := NewRegExpValidator("reg", "invalid", "123", regexp.MustCompile("\\w+"))
+	err := v.Validate(v.Value)
+	if err != nil {
+		t.Fatalf(assertTemplate, nil, err)
+	}
+}
