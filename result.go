@@ -43,3 +43,25 @@ func (r ValidationResult) IsValid() bool {
 
 	return count == 0
 }
+
+// FirstError random return an error in the validation result
+func (r ValidationResult) FirstError() error {
+	for _, ves := range r {
+		for _, err := range ves {
+			return err
+		}
+	}
+
+	return nil
+}
+
+// Errors return all errors in a list
+func (r ValidationResult) Errors() []error {
+	errors := make([]error, 0)
+	for _, ves := range r {
+		for _, err := range ves {
+			errors = append(errors, err)
+		}
+	}
+	return errors
+}
