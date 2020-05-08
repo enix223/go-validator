@@ -7,13 +7,13 @@ import (
 
 func TestChoiceValidator(t *testing.T) {
 	vs := []*ChoiceValidator{
-		&ChoiceValidator{
+		{
 			ValidatorName: "choices",
 			Value:         1,
 			Message:       "should be in [1, 2, 3]",
 			Choices:       [3]int{1, 2, 3},
 		},
-		&ChoiceValidator{
+		{
 			ValidatorName: "choices",
 			Value:         1,
 			Message:       "should be in [1, 2, 3]",
